@@ -1,0 +1,15 @@
+{% if menu %}
+	<ul class="nav-list">
+	{% for item in menu %}
+		<li class="nav-item inline {{item.classes | join(' ')}}">
+      {% if item.title == 'Home' %}
+        <a href="{{item.get_link}}">IMAGEVADOR</a>
+        {% include "menu.twig" with {'menu': item.get_children} %}
+      {% else %}
+  			<a href="{{item.get_link}}">{{item.title}}</a>
+  			{% include "menu.twig" with {'menu': item.get_children} %}
+      {% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

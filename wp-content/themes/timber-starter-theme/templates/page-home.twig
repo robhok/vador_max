@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+        {% if image_fullscreen %}
+          <div class="cover-image-container">
+            <img src="{{image_fullscreen.src}}"/>
+          </div>
+        {% endif %}
+        <div class="asides-blocks-container">
+          <div class="row">
+            <span class="col-6">
+              {{asides_blocks.left}}
+            </span>
+            <span class="col-6">
+              {{asides_blocks.right}}
+            </span>
+          </div>
+        </div>
+				<!-- <h1 class="article-h1">{{post.title}}</h1> -->
+				<div class="article-body">
+					HOME GUYSSSSSSSS
+          {{post.content}}
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}
