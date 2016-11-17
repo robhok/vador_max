@@ -55,8 +55,8 @@ class StarterSite extends TimberSite {
 //    add_filter('upload_mimes', array( $this, 'cc_mime_types' ) );
     
     /* add_action('admin_head', array( $this,'fix_svg_thumb_display') ); */
+    
   }
-
   function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
@@ -91,6 +91,16 @@ class StarterSite extends TimberSite {
     	'before_title'  => '<h2 class="widgettitle">',
     	'after_title'   => '</h2>',
     ));   
+    
+    register_sidebar(array(
+      'name' => __( 'Footer Widgets', 'footer-widgets' ),
+      'id' => 'sidebar-2',
+      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'footer-widgets' ),
+      'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    	'after_widget'  => '</li>',
+    	'before_title'  => '<h2 class="widgettitle">',
+    	'after_title'   => '</h2>',
+    ));
   }
 
 	function add_to_context( $context ) {
