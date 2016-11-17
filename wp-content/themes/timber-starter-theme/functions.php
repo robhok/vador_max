@@ -44,8 +44,8 @@ class StarterSite extends TimberSite {
 
     // appel du style dans la page
     wp_enqueue_style( 'main_style' );
-    
-    // A SUPPRIMER A LA FIN 
+
+    // A SUPPRIMER A LA FIN
     // MAX CSS
     wp_register_style( 'max_style', get_template_directory_uri() . '/styles/maxime.css' );
 
@@ -53,26 +53,26 @@ class StarterSite extends TimberSite {
     wp_enqueue_style( 'max_style' );
 
 //    add_filter('upload_mimes', array( $this, 'cc_mime_types' ) );
-    
+
     /* add_action('admin_head', array( $this,'fix_svg_thumb_display') ); */
-    
+
   }
   function cc_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
   }
-  
+
   function fix_svg_thumb_display() {
     echo '
-      td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail { 
-        width: 100% !important; 
-        height: auto !important; 
+      td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail {
+        width: 100% !important;
+        height: auto !important;
       }'
       ;
 }
 
-  
-	
+
+
   function register_post_types() {
 		//this is where you can register custom post types
 	}
@@ -83,19 +83,18 @@ class StarterSite extends TimberSite {
 
   function register_sidebars() {
     register_sidebar(array(
-      'name' => __( 'Main Widgets', 'main-widgets' ),
+      'name' => __( 'Home Widgets', 'home-widgets' ),
       'id' => 'sidebar-1',
-      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'main-widgets' ),
+      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'home-widgets' ),
       'before_widget' => '<li id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</li>',
     	'before_title'  => '<h2 class="widgettitle">',
     	'after_title'   => '</h2>',
-    ));   
-    
+    ));
     register_sidebar(array(
-      'name' => __( 'Footer Widgets', 'footer-widgets' ),
+      'name' => __( 'News Widgets', 'news-widgets' ),
       'id' => 'sidebar-2',
-      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'footer-widgets' ),
+      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'news-widgets' ),
       'before_widget' => '<li id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</li>',
     	'before_title'  => '<h2 class="widgettitle">',

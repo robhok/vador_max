@@ -8,7 +8,7 @@
         </a>
         {% include "menu.twig" with {'menu': item.get_children} %}
       {% else %}
-  			<a href="{{item.get_link}}">{{item.title}}</a>
+  			<a href="{{item.get_link}}">{{item.title | upper}}</a>
   			{% include "menu.twig" with {'menu': item.get_children} %}
       {% endif %}
 		</li>
