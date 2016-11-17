@@ -78,9 +78,49 @@ class StarterSite extends TimberSite {
 }
 
 
-
   function register_post_types() {
 		//this is where you can register custom post types
+    $labels = array(
+    'name'               => 'Empire',
+    'singular_name'      => 'Empire',
+    'all_items'          => 'Tous les profils',
+    'add_new'            => 'Ajouter un profil',
+    'add_new_item'       => 'Ajouter un profil',
+    'edit_item'          => "Modifier un profil",
+    'new_item'           => 'Nouveau profil',
+    'view_item'          => "Voir le profil",
+    'search_items'       => 'Trouver un profil',
+    'not_found'          => 'Pas de résultat',
+    'not_found_in_trash' => 'Pas de résultat',
+    'parent_item_colon'  => 'Profils parentes:',
+    'menu_name'          => 'Empire',
+  );
+
+  $args = array(
+    'labels'              => $labels,
+    'hierarchical'        => false,
+    'supports'            => array( 'title','thumbnail','editor', 'excerpt', 'comments' ),
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'menu_position'       => 2,
+    'menu_icon'           => 'dashicons-groups',
+    'show_in_nav_menus'   => true,
+    'publicly_queryable'  => true,
+    'exclude_from_search' => false,
+    'has_archive'         => false,
+    'query_var'           => true,
+    'can_export'          => true,
+    'rewrite'             => array( 'slug' => 'Empire' ),
+    /*'capabilities'        => array(
+      'edit_post'        => 'edit_annonce',
+      'read_post'        => 'read_annonce',
+      'create_posts'     => 'create_annonces',
+    ),*/
+  );
+
+  register_post_type('Empire', $args );
+    ;
 	}
 
   function register_taxonomies() {
