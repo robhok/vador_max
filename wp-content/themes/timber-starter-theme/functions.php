@@ -45,6 +45,12 @@ class StarterSite extends TimberSite {
     // appel du style dans la page
     wp_enqueue_style( 'main_style' );
 
+    // enregistrement d'un nouveau style
+    wp_register_style( 'fonts', get_template_directory_uri() . '/styles/fonts.css' );
+
+    // appel du style dans la page
+    wp_enqueue_style( 'fonts' );
+
     // A SUPPRIMER A LA FIN
     // MAX CSS
     wp_register_style( 'max_style', get_template_directory_uri() . '/styles/maxime.css' );
