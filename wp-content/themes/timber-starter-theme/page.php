@@ -30,4 +30,8 @@ $context['asides_blocks'] = array(
 );
 $image = get_field('image_fullscreen');
 if ($image !== false && $image !== '' ) $context['image_fullscreen'] = new TimberImage($image);
+/*$cover_image_id = $post->cover_image;
+if ($cover_image_id !== false && $cover_image_id !== '' ) $context['cover_image'] = new TimberImage($cover_image_id);*/
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+
+

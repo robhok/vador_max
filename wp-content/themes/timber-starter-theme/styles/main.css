@@ -64,6 +64,7 @@ list-style-type: none;
 .rpwe-block a{
 display: inline !important;
 text-decoration: none;
+color: #E53935;
 }
 
 .rpwe-block h3{
@@ -88,7 +89,7 @@ font-size: 12px;
 }
 
 .rpwe-time{
-color: #bbb;
+color: #E53935;
 font-size: 11px;
 }
 
@@ -161,29 +162,45 @@ h1.hdr-logo > a {
 }
 
 header.header {
-  background: grey;
+  height: 80px;
+  background: transparent;
+  transition: all 0.5s ease; 
+}
+
+header.header-bgc-black {
+    background-color: black;
 }
 
 nav.nav-main {
-  width: 60%;
+  width: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 nav.nav-main > ul.nav-list {
-  margin: 0;
+  text-align: center;
   padding: 0;
+  margin: 20px auto;
+  width: 100%;
+  vertical-align: middle;
+
 }
 
 nav.nav-main > ul.nav-list > li.nav-item {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  padding: 0 3%;
+  vertical-align: middle;
 }
 
 nav.nav-main > ul.nav-list > li.nav-item > a {
   color: white;
   text-decoration: none;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  font-style: bold;
+  margin-top: -10px;
 }
 
 .cover-image-container {
