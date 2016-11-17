@@ -1,8 +1,8 @@
 {% if menu %}
 	<ul class="nav-list">
-	{% for item in menu %}
+	{% for key, item in menu %}
 		<li class="nav-item inline {{item.classes | join(' ') }}">
-      {% if item.title == 'Home' %}
+      {% if key == 3 %}
         <a href="{{item.get_link}}">
           <img src="{{image_header|resize(40, 40)}}" alt="">
         </a>

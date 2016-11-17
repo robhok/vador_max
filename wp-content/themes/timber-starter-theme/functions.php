@@ -95,7 +95,7 @@ class StarterSite extends TimberSite {
       'name' => __( 'News Widgets', 'news-widgets' ),
       'id' => 'sidebar-2',
       'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'news-widgets' ),
-      'before_widget' => '<li id="%1$s" class="widget %2$s">',
+      'before_widget' => '<li id="%1$s" class="widget %2$s no-style">',
     	'after_widget'  => '</li>',
     	'before_title'  => '<h2 class="widgettitle">',
     	'after_title'   => '</h2>',

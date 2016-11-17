@@ -49,11 +49,17 @@ header.header {
   overflow-x: hidden;
 }
 
+.no-style {
+  list-style-type: none;
+  list-style: none;
+}
+
 .rpwe-block ul{
 list-style: none !important;
 margin-left: 0 !important;
 padding-left: 0 !important;
 text-align: center;
+text-decoration: none;
 }
 
 .rpwe-block li{
@@ -62,13 +68,12 @@ border-bottom: 1px solid #eee;
 margin-bottom: 10px;
 padding-bottom: 10px;
 list-style-type: none;
-/*width: 50%;*/
 display: inline-block;
 text-align: left;
 width: 300px !important;
 height: 400px !important;
 vertical-align: top;
-margin: 0 5%;
+margin: 0 2%;
 background: rgb(30,30,30);
 -webkit-box-shadow: 5px 5px 59px 0 rgba(0,0,0,0.19);
 box-shadow: 5px 5px 59px 0 rgba(0,0,0,0.19);
@@ -84,9 +89,11 @@ text-decoration: none;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 padding: 4% 8%;
+display: inline-block;
 }
 
 .rpwe-block > .rpwe-ul > .rpwe-li > h3 > a{
+display: inline !important;
 background: none !important;
 clear: none;
 margin-bottom: 0 !important;
@@ -96,6 +103,11 @@ font-size: 18px !important;
 line-height: 1em;
 width: 100%;
 color: #f3f3f3;
+}
+
+.rpwe-li > .rpwe-img {
+    width: 300px;
+    height: 230px;
 }
 
 .rpwe-img > .rpwe-thumb{
