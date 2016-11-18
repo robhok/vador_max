@@ -140,7 +140,7 @@ class StarterSite extends TimberSite {
       'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'home-widgets' ),
       'before_widget' => '<li id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</li>',
-    	'before_title'  => '<h2 class="widgettitle">',
+    	'before_title'  => '<h2 class="latest-news widgettitle">',
     	'after_title'   => '</h2>',
     ));
     register_sidebar(array(

@@ -26,6 +26,10 @@ $post = new TimberPost();
 $context['post'] = $post;
 // die(Timber::get_widgets('news-widgets'));
 $context['news'] = Timber::get_widgets('news-widgets');
+$context['home'] = array(
+  'main' => get_field('main_title'),
+  'bg' => get_field('background_title')
+);
 $context['asides_blocks'] = array(
   'left' => Timber::get_widgets('home-widgets'),
   'right' => get_field('right_block')

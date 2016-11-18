@@ -5,8 +5,12 @@
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
         {% if image_fullscreen %}
-          <div class="cover-image-container">
-            <img src="{{image_fullscreen.src}}"/>
+          <div class="cover-image-container pos-r">
+            <img class="pos-a-img" src="{{image_fullscreen.src}}"/>
+            <div class="pos-a titles-container">
+            <h3 class="main-title-home pos-a">{{home.main}}</h3>
+            <h5 class="bg-title-home pos-a">{{home.bg}}</h5>
+            </div>
           </div>
         {% endif %}
         <div class="asides-blocks-container white-bg">
