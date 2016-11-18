@@ -4,10 +4,31 @@
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
 				<div class="article-body">
-          THIS IS THE EMPIRE
-					{{post.content}}
+          <h1 class="article-h1 pt-header">{{post.title}}</h1>
+          <div class="empire-list row">
+            {% for member in empire %}
+              {% if member.role and member.role != "Leader" %}
+                <li class="col-4 empire-item {{member.class}}">
+                  <a href="{{member.get_link}}">
+                    <img src="{{member.thumbnail.src | resize(400,400)}}" alt="">
+                    <h3>{{member.post_title}}</h3>
+                    <h4>{{member.role}}</h4>
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="empire-main {{leader.class}}">
+            <h3 class="floated_title">
+              {{leader.post_title}}
+            </h3>
+            <div class="pt-header white-bg">
+              <a href="{{leader.get_link}}">
+                <img src="{{leader.thumbnail.src | resize(600,300)}}" alt="">
+              </a>
+            </div>
+          </div>
 				</div>
 			</section>
 		</article>

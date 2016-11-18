@@ -46,6 +46,12 @@ class StarterSite extends TimberSite {
     wp_enqueue_style( 'main_style' );
 
     // enregistrement d'un nouveau style
+    wp_register_style( 'custom_grid', get_template_directory_uri() . '/styles/grid.css' );
+
+    // appel du style dans la page
+    wp_enqueue_style( 'custom_grid' );
+
+    // enregistrement d'un nouveau style
     wp_register_style( 'fonts', get_template_directory_uri() . '/styles/fonts.css' );
 
     // appel du style dans la page
@@ -92,7 +98,7 @@ class StarterSite extends TimberSite {
     'search_items'       => 'Trouver un profil',
     'not_found'          => 'Pas de résultat',
     'not_found_in_trash' => 'Pas de résultat',
-    'parent_item_colon'  => 'Profils parentes:',
+    'parent_item_colon'  => 'Profils parents:',
     'menu_name'          => 'Empire',
   );
 
@@ -111,7 +117,7 @@ class StarterSite extends TimberSite {
     'has_archive'         => false,
     'query_var'           => true,
     'can_export'          => true,
-    'rewrite'             => array( 'slug' => 'Empire' ),
+    'rewrite'             => array( 'slug' => 'empire' ),
     /*'capabilities'        => array(
       'edit_post'        => 'edit_annonce',
       'read_post'        => 'read_annonce',
@@ -146,6 +152,15 @@ class StarterSite extends TimberSite {
     	'before_title'  => '<h2 class="widgettitle">',
     	'after_title'   => '</h2>',
     ));
+    register_sidebar(array(
+      'name' => __( 'Footer Widgets', 'footer-widgets' ),
+      'id' => 'sidebar-3',
+      'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'footer-widgets' ),
+      'before_widget' => '<li id="%1$s" class="widget %2$s no-style">',
+    	'after_widget'  => '</li>',
+    	'before_title'  => '<h2 class="widgettitle">',
+    	'after_title'   => '</h2>',
+    ));
   }
 
 	function add_to_context( $context ) {
@@ -154,6 +169,7 @@ class StarterSite extends TimberSite {
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu('menu_header');
 		$context['image_header'] = get_header_image();
+    $context['footer'] = Timber::get_widgets('footer-widgets');
 		$context['site'] = $this;
 		return $context;
 	}

@@ -3,14 +3,14 @@
 	{% for key, item in menu %}
 		<li class="nav-item inline {{item.classes | join(' ') }}">
       {% if key == 3 %}
-        <a href="{{item.get_link}}">
+        <a href="{{url}}">
           <img src="{{image_header|resize(40, 40)}}" alt="">
         </a>
-        {% include "menu.twig" with {'menu': item.get_children} %}
-      {% else %}
-  			<a href="{{item.get_link}}">{{item.title | upper}}</a>
-  			{% include "menu.twig" with {'menu': item.get_children} %}
+      </li>
+      <li class="nav-item inline {{item.classes | join(' ') }}">
       {% endif %}
+			<a href="{{item.get_link}}">{{item.title | upper}}</a>
+			{% include "menu.twig" with {'menu': item.get_children, 'url': url} %}
 		</li>
 	{% endfor %}
 	</ul>

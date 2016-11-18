@@ -16,7 +16,7 @@
             </h1>
           </div> -->
 					<nav id="nav-main" class="inline nav-main" role="navigation">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
+						{% include "menu.twig" with {'menu': menu.get_items, 'url': site.url} %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}
@@ -37,7 +37,7 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
+			<footer id="footer" class="black-bg">
 				{% include 'footer.twig' %}
 			</footer>
 			{{ function('wp_footer') }}
